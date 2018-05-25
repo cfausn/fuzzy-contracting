@@ -272,16 +272,13 @@
                     name="message"></textarea>
                     <p class="help-block text-danger"></p>
                   </div>
-                </div>                
+                </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                   <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-                  <script type="text/javascript">
-                    $('#$sendMessageButton').click(function() {
-                      fbq('track', 'CompleteRegistration');
-                    });
-                  </script>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
+                  type="submit" onClick="fbq('track', 'CompleteRegistration');">Send Message</button>
+
                 </div>
               </div>
             </form>
