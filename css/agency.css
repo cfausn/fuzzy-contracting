@@ -59,6 +59,8 @@ section h3.section-subheading {
   section {
     padding: 10px 0;
   }
+
+
 }
 
 .btn {
@@ -599,6 +601,19 @@ header.masthead .intro-text .intro-heading {
 section#contact {
 }
 
+section#contact .contact-form {
+  position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+  top: 130px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  left: 0;
+  right:0;
+  z-index: 99;
+  background-color:#212529
+}
+
 section#contact .section-heading {
   color: #fff;
 }
@@ -649,6 +664,13 @@ section#contact :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  section#contact .form-group textarea.form-control {
+    height: 90px;
+  }
 }
 
 footer {
