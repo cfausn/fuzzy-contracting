@@ -204,7 +204,7 @@
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x"><svg version="1.1" id="s-window" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="78px" height="108.035px" viewBox="0 0 78 108.035" enable-background="new 0 0 78 108.035" xml:space="preserve"> <path fill="#010101" d="M2.04,83.897l72,24c1.92,0.6,3.96-0.84,3.96-2.88v-102c0-2.04-2.04-3.48-3.96-2.88l-72,24  c-1.2,0.36-2.04,1.56-2.04,2.88v54C0,82.337,0.84,83.417,2.04,83.897z M6,55.578h27v32.28l-27-9V55.578z M36,88.817v-33.24h36v45.24  L36,88.817z M72,52.578H36v-33.36l36-12V52.578z M33,20.177v32.28H6v-23.28L33,20.177z"></path> </svg>
-            </span><br/><br/>
+            </span>
             <h4 class="service-heading">Windows & Doors</h4>
           </div>
         </div>
@@ -212,8 +212,48 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
-      <div class="container">
+    <section id="contact" style="position:relative;"  class="bg-light">
+
+      <div>
+            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+            <div class="contmap" style='overflow:hidden;height:750px;width:100%;'>
+              <div id='gmap_canvas' style='height:100%;width:100%;'></div>
+              <div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div>
+              <div><small><a href="http://freedirectorysubmissionsites.com/">free web directories</a></small></div>
+              <style>
+                #gmap_canvas img {
+                  max-width: none !important;
+                  background: none !important
+                }
+              </style>
+            </div>
+            <script type='text/javascript'>
+              function init_map() {
+                var myOptions = {
+                  zoom: 12,
+                  center: new google.maps.LatLng(43.1862853, -77.686439),
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                marker = new google.maps.Marker({
+                  map: map,
+                  position: new google.maps.LatLng(43.1862853, -77.686439)
+                });
+                infowindow = new google.maps.InfoWindow({
+                  content: '<strong>My Location</strong><br>mumbai<br>'
+                });
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.open(map, marker);
+                });
+                infowindow.open(map, marker);
+              }
+              google.maps.event.addDomListener(window, 'load', init_map);
+            </script>
+          </div>
+
+      <div class="container" style="position: absolute;margin-left:auto;
+      margin-right: auto;top: 150px; padding-bottom: 10px; padding-top: 5px;
+      left: 0; right:0;z-index: 99;background-color:#212529">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Contact Us</h2>
@@ -236,7 +276,7 @@
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="585-555-5555"
+                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone # (optional)"
                     name="phone">
                     <p class="help-block text-danger"></p>
                   </div>
@@ -258,6 +298,8 @@
           </div>
         </div>
       </div>
+
+
     </section>
 
     <!-- Footer -->
